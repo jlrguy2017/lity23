@@ -91,7 +91,7 @@ if (!empty($user)) {
                 <input class="editbtn" type="submit" name="update" value="Update">
             </form>
             </tr>
-            ?>
+            
         }
     }
 }
@@ -118,4 +118,3 @@ if(isset($_POST['update'])){
         echo "Error updating profile: " . pg_last_error($conn);
     }
 }
-?>
