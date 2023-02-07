@@ -6,7 +6,7 @@ function music()
     include('includes/db.php');
 
     $query = "SELECT * FROM `music`";
-    $run = mysqli_query($conn, $query);
+    $run = pg_query($conn, $query);
 
     if ($run) {
 
@@ -39,7 +39,7 @@ function user()
     $email = $_SESSION['email'];
 
     $query = "SELECT * FROM `auth` WHERE `email` = '$email'";
-    $run = mysqli_query($conn, $query);
+    $run = pg_query($conn, $query);
 
     if ($run) {
 
@@ -66,7 +66,7 @@ function search()
         $lang = $_POST['language'];
 
         $query = "SELECT * FROM `music` WHERE `language` = '$lang'";
-        $run = mysqli_query($conn, $query);
+        $run = pg_query($conn, $query);
 
         if ($run) {
 
@@ -132,7 +132,7 @@ $user = $_SESSION['email'];
 include('includes/db.php');
 
 $query = "SELECT * FROM `music` WHERE `user` = '$user'";
-$run = mysqli_query($conn, $query);
+$run = pg_query($conn, $query);
 
 if($run){
 
@@ -169,7 +169,7 @@ if(isset($_POST['delete'])){
     $id = $_POST['id'];
 
     $query = "DELETE FROM `music` WHERE `id` = $id";
-    $run = mysqli_query($conn, $query);
+    $run = pg_query($conn, $query);
 
     if($run){
 
