@@ -10,13 +10,13 @@
 <body>
     <center>
         <div class="logindiv">
-        <img class="logo" src="media/logo.png">
+        <img class="logo" src="logo01.gif">
             <form class="loginform" action="includes/auth.php" method="post">
-                <input class="logininp" type="email" name="email" placeholder="Email Id"><br>
-                <input class="logininp" type="password" name="password" placeholder="Password"><br>
+                <input class="logininp" type="email" name="email" placeholder="Email Id" required><br>
+                <input class="logininp" type="password" name="password" placeholder="Password" required><br>
                 <input class="loginbtn" type="submit" name="login" value="Login">
             </form>
-            <p>Not Registerd? <a href="register.php">Register Now</a></p>
+            <p>Not Registered? <a href="register.php">Register Now</a></p>
         </div>
     </center>
 </body>
