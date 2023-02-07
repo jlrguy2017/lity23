@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST['register'])) {
 
     include('../includes/db.php');
@@ -82,7 +81,7 @@ if (!empty($user)) {
     if ($run) {
         $row = pg_fetch_assoc($run);
         if (!empty($row)) {
-            ?>
+            
             <tr>
             <form class="editform" action="includes/auth.php" method="post">
                 <input class="editinp" type="text" name="name" value="<?php echo htmlentities($row['name']);?>"><br>
@@ -92,7 +91,7 @@ if (!empty($user)) {
                 <input class="editbtn" type="submit" name="update" value="Update">
             </form>
             </tr>
-            <?php
+            
         }
     }
 }
@@ -119,5 +118,4 @@ if(isset($_POST['update'])){
         echo "Error updating profile: " . pg_last_error($conn);
     }
 }
-
 ?>
