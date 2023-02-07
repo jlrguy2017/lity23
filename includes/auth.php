@@ -19,9 +19,9 @@ if(isset($_POST['register'])){
     else{
 
     $query = "SELECT * FROM `auth` WHERE `email` = '$email'";
-    $run = mysqli_query($conn, $query);
+    $run = pg_query($conn, $query);
 
-    $count = mysqli_num_rows($run);
+    $count = pg_num_rows($run);
 
     if($count >= 1){
         echo "<script type='text/javascript'>";
@@ -32,7 +32,7 @@ if(isset($_POST['register'])){
     else{
 
         $query = "INSERT INTO `auth`(`name`, `email`, `phone`, `password`) VALUES ('$name','$email','$phone','$password')";
-        $run = mysqli_query($conn, $query);
+        $run = pg_query($conn, $query);
 
         if($run){
             echo "<script type='text/javascript'>";
@@ -59,7 +59,7 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
 
     $query = "SELECT * FROM `auth` WHERE `email` = '$email' AND `password` = '$password' ";
-    $run = mysqli_query($conn, $query);
+    $run = pg_query($conn, $query);
 
     if($run){
 
@@ -100,7 +100,7 @@ function profile(){
     $user = $_SESSION['email'];
 
     $query = "SELECT * FROM `auth` WHERE `email` = '$user'";
-    $run = mysqli_query($conn, $query);
+    $run = pg_query($conn, $query);
 
     if($run){
 
@@ -141,7 +141,7 @@ if(isset($_POST['update'])){
     $password = $_POST['password'];
 
     $query = "UPDATE `auth` SET `name`='$name',`email`='$email',`phone`='$phone',`password`='$password' WHERE `email` = '$user'";
-    $run = mysqli_query($conn, $query);
+    $run = pg_query($conn, $query);
 
     if($run){
 
